@@ -29,7 +29,7 @@ Uso en el taller:
 - Detectar parámetros vulnerables
 - Identificar endpoints y APIs ocultas
 
-![Interfaz de Burp Suite](../SQL_INJECTION/img/Paso1.PNG)
+![Interfaz de Burp Suite](../img/Paso1.PNG)
 
 
 ---
@@ -47,7 +47,7 @@ Para qué sirve:
 Regla:
 > **Todo hallazgo serio pasa por Repeater**
 
-![Interfaz de Burp Suite](../SQL_INJECTION/img/Paso3.PNG)
+![Interfaz de Burp Suite](../img/paso3.PNG)
 ---
 
 ### 1.3 Intruder
@@ -63,7 +63,7 @@ Usos típicos:
 Nota:
 En versión Community es lento, pero suficiente para aprendizaje.
 
-![Interfaz de Burp Suite](../SQL_INJECTION/img/Paso2.PNG)
+![Interfaz de Burp Suite](../img/paso2.PNG)
 ---
 
 ### 1.4 Decoder
@@ -80,7 +80,7 @@ Muy útil para:
 - Poison Null Byte
 - Bypass de validaciones
 
-![Interfaz de Burp Suite](../SQL_INJECTION/img/Paso4.PNG)
+![Interfaz de Burp Suite](../img/paso4.PNG)
 
 ---
 
@@ -93,7 +93,7 @@ Función:
 - Ver diferencias sutiles
 - Detectar cambios de comportamiento
 
-![Interfaz de Burp Suite](../SQL_INJECTION/img/Paso5.PNG)
+![Interfaz de Burp Suite](../img/paso5.PNG)
 ---
 
 ## 2. METODOLOGÍA DE AUDITORÍA
