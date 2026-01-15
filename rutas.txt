@@ -1,0 +1,17 @@
+admin
+administration
+login
+register
+profile
+rest
+api
+users
+basket
+orders
+products
+search
+assets
+ftp
+uploads
+config
+backup
