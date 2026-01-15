@@ -1,6 +1,6 @@
 # Fuzzing de rutas
 
-## Metodo 1 - Manual
+## Paso 1: Método Manual
 
 Este metodo solo se usa cuando estas buscando algo especifico que un diccionario normal no puede encontrar, como seria la pagina admin en una web que usa un prefijo especifico, o para hacer alguna busqueda rápida si buscas algo en especifico.
 
@@ -12,8 +12,9 @@ En el navegador modifica la parte del final de la url para añadir lo que quiera
 Ejemplo: Te han dado un contenedor en docker que debes auditar que esta en el puerto 8080, por lo que has visto hasta ahora parece que la pagina usa el prefijo "ls-" en sus directorios y solo 3 letras despues. Asi que si intentaras encontrar la url de administracion usarias esta dirreccion:   
 `http://localhost:8080/ls-adm`
 
+---
 
-## Método 2 – Inspección del Cliente (DevTools)
+## Paso 2: Inspección del Cliente (DevTools)
 
 Este método se usa para descubrir rutas válidas inspeccionando el código del lado cliente. Es especialmente útil cuando la aplicación web carga rutas mediante JavaScript o cuando es el propio cliente el que valida qué rutas se pueden usar.
 
@@ -43,7 +44,9 @@ if (route === "/admin") {
 Esto indica que la ruta `/admin` existe y puede ser accesible directamente desde:
 `http://[IP o url]:[puerto]/admin`
 
-## Método 3 – Automatización con Gobuster
+---
+
+## Paso 3: Automatización con Gobuster
 
 Este método se usa para descubrir rutas y directorios de forma automática utilizando la herramienta Gobuster. Es muy eficaz, pero debe usarse con cuidado para no sobrecargar la página objetivo.
 
@@ -94,9 +97,9 @@ Gobuster probará cada ruta del diccionario y mostrará únicamente aquellas que
 
 ---
 
-# Soluciones
-## Solución para Metodo 1
-### Pasos
+## Soluciones
+
+### Solución Paso 1
 
 1. Accede a la página principal de Juice Shop:
 
@@ -117,8 +120,7 @@ Gobuster probará cada ruta del diccionario y mostrará únicamente aquellas que
 
    se confirma que la API existe y responde, lo que indica que hay múltiples endpoints accesibles bajo esa ruta.
 
-## Solución para Metodo 2
-### Pasos
+### Solución Paso 2
 
 1. Abre Juice Shop en el navegador:
 
@@ -134,15 +136,13 @@ Gobuster probará cada ruta del diccionario y mostrará únicamente aquellas que
    ```
 5. Usa Ctrl + F y busca `path` (te saldran varios resultados, baja hasta encontrar el correcto).
 
-## Solución para Metodo 3
-
-### Pasos
+### Solución Paso 3
 
 1. Usa el diccionario pequeño que esta en el Metodod 2 para no sobrecargar la aplicación.
 2. Ejecutar Gobuster contra el puerto 3000, que es el puerto por defecto de Juice Shop.
 3. Filtrar respuestas irrelevantes usando `--exclude-length`, ya que Juice Shop devuelve muchas respuestas con el mismo tamaño.
 
-### Comando corregido y validado
+#### Comando corregido y validado
 
 ```
 gobuster dir -u http://[IP]:3000/ \

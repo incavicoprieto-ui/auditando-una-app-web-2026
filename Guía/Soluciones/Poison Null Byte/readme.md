@@ -1,6 +1,6 @@
 # Poison Null Byte
 
-## Pasos para solucionar el ejercicio
+## Paso 1: Exploración y detección
 
 Navegando por la web accedemos a la sección **“About us”** desde el menú desplegable.
 
@@ -18,8 +18,9 @@ Si eliminamos `legal.md` de la URL y accedemos directamente a la ruta:
 
 podemos observar que tenemos acceso a varios archivos. Tras revisarlos, llegamos a la conclusión de que **solo se nos permite acceder a archivos con extensión `.md`**.
 
+---
 
-## Uso del Poison Null Byte
+## Paso 2: Explotación con Poison Null Byte
 
 Para poder acceder al resto de archivos, utilizamos un truco conocido como **Poison Null Byte**.
 
@@ -41,8 +42,9 @@ a la ruta del archivo:
 
 Al pulsar **Enter**, se abre la ventana de descarga del archivo.
 
+---
 
-## ¿Por qué funciona?
+## Explicación técnica
 
 - `%25` representa el carácter `%`
 - `%2500` se decodifica finalmente como `%00`, que es el **Null Byte**
@@ -53,6 +55,8 @@ El resultado es que:
 - El sistema de archivos corta el nombre en el Null Byte y abre el archivo real, ignorando la extensión falsa
 
 De esta forma, la validación se cumple, pero el archivo que se descarga **no es realmente un `.md`**, lo que nos permite acceder a archivos que deberían estar bloqueados.
+
+---
 
 ## Retos que se pueden completar con este método
 

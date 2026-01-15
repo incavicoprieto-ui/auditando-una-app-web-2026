@@ -26,6 +26,8 @@ qwerty
 4. Guardad y salid de nano con: 
 Ctrl+O, Enter, luego Ctrl+X.
 
+---
+
 ## Paso 2: Lanzar Wfuzz contra el endpoint de login
 
 Ahora automatizamos el intento de varias contraseñas usando la wordlist que acabáis de crear:
@@ -44,6 +46,8 @@ Ahora automatizamos el intento de varias contraseñas usando la wordlist que aca
 - Donde aparece **`FUZZ`** en el JSON, Wfuzz va sustituyendo cada línea de la wordlist como valor de **`password`**.
 - **`H "Content-Type: application/json"`** copia exactamente la cabecera que hemos visto en Postman.
 - **`-hc 401`** le dice a Wfuzz que **oculte** todas las respuestas con código 401 (fallo de login); de esa forma, en la salida aparecerá resaltado el intento que **no** devuelve 401, que es la contraseña válida.
+
+---
 
 ## Paso 3: Usar la contraseña encontrada y completar el reto
 
