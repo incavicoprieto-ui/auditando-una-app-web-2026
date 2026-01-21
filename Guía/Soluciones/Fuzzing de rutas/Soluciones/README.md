@@ -39,7 +39,7 @@
 
 ### Solución Paso 3
 
-1. Usa el diccionario pequeño que esta en el Metodod 2 para no sobrecargar la aplicación.
+1. Usa el diccionario pequeño que esta en el repositorio para no sobrecargar la aplicación.
 2. Ejecutar Gobuster contra el puerto 3000, que es el puerto por defecto de Juice Shop.
 3. Filtrar respuestas irrelevantes usando `--exclude-length`, ya que Juice Shop devuelve muchas respuestas con el mismo tamaño.
 
